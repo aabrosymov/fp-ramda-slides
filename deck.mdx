@@ -1,11 +1,9 @@
 import {
-  Image,
-  Notes,
   Head,
-  Header,
   Split,
   SplitRight,
   Appear,
+  Horizontal,
 } from "mdx-deck";
 import {
   CodeSurfer,
@@ -13,10 +11,15 @@ import {
   Step,
 } from "code-surfer";
 import { github, oceanicNext } from "@code-surfer/themes";
+import { yellow } from "mdx-deck/themes";
 
-import funcImage from "./func.png";
-import avatar from "./avatar.jpg";
-import thinkMemeImage from "./think-about-it.png";
+import funcImage from "./assets/images/func.png";
+import ramdaDocsImage from "./assets/images/ramda-docs.png";
+import avatar from "./assets/images/avatar.jpg";
+import thinkMemeImage from "./assets/images/think-about-it.png";
+import composeMeme1 from "./assets/images/compose-meme-1.jpeg";
+import composeMeme2 from "./assets/images/compose-meme-2.jpg";
+import composeMeme3 from "./assets/images/compose-meme-3.png";
 
 export const theme = oceanicNext;
 
@@ -24,7 +27,7 @@ export const theme = oceanicNext;
   <title>Why FP? 🤔</title>
 </Head>
 
-# Why you should try FP and Ramda JS?
+### Why you should try FP and Ramda JS 🙂
 
 ---
 
@@ -37,20 +40,14 @@ export const theme = oceanicNext;
     height: "350px",
   }}
 />
-Who am I?
 
-Anton Abrosymov
+## Who am I?
 
-<ul>
-  <li>
-    I have 3+ years of expirience in JavaScript development.
-  </li>
-  <li>Engaged in React, Node JS.</li>
-  <li>
-    Currently work in middle-size project at technical lead
-    position.
-  </li>
-</ul>
+### Anton Abrosymov 😎
+
+I have 3+ years of experience in JavaScript development.  
+Engaged in React, Node JS.  
+Currently work in middle-size project at front-end lead position.
 
 </SplitRight>
 
@@ -59,24 +56,21 @@ Anton Abrosymov
 <Split>
 
 <div>
-  <img src={thinkMemeImage} />
-  ## ☝️ As for me there are 2 main principles of software development:
+
+<img src={thinkMemeImage} style={{ width: "400px" }} />
+
+#### ☝️ As for me there are 2 main principles of software development:
+
 </div>
 
-<ul>
 <Appear>
 
-<li>
-  The best line of code is the one that is not written.
-</li>
+1. The best line of code is the one  
+   that is not written.
 
-<li>
-  A functionality is written once, but probably will be
-  changed many times in the future.
-</li>
+2. A functionality is written once, but probably will be changed many times in the future.
 
 </Appear>
-</ul>
 
 </Split>
 
@@ -84,8 +78,10 @@ Anton Abrosymov
 
 <SplitRight>
 
-The "functional" in "functional programming" refers to mathematical functions,
-rather than "what it should do" as in "functional requirements".
+The "functional" in "functional programming"
+refers to _mathematical functions_,  
+rather than "what it should do"  
+as in "functional requirements".
 
 <img src={funcImage} />
 Visual representation of a function f(x) = 3 - 0.5x
@@ -96,7 +92,9 @@ Visual representation of a function f(x) = 3 - 0.5x
 
 # Pure functions 🚰
 
-Given the <b>same input</b>, will always return the <b>same output</b> and produces <b>no side effect </b>
+Given the _same input_,  
+will always return the _same output_  
+and produces _no side effect_
 
 ---
 
@@ -139,6 +137,231 @@ Given the <b>same input</b>, will always return the <b>same output</b> and produ
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+# Immutable data
+
+---
+
+# Side effects
+
+---
+
+# Currying
+
+```js
+f(x, y, z) => f(x)(y)(z)
+```
+
+---
+
+# What is the Ramda JS?
+
+<Split>
+
+<img src={ramdaDocsImage} style={{ width: "1200px" }} />
+
+<ol
+  style={{
+    textAlign: "left",
+    marginLeft: "20px",
+    fontSize: "36px",
+  }}
+>
+  <li>Ramda package contains 200 different functions</li>
+  <li>Each Ramda function is carried</li>
+  <li>
+    The data to be operated on is generally supplied last.
+  </li>
+</ol>
+
+</Split>
+
+---
+
+# Functional composition
+
+Applying a function to the output of another function
+
+<Appear>
+
+f(g(h(x))) => compose(h, g, f)(x)
+
+</Appear>
+
+---
+
+# Function composition
+
+<Horizontal>
+
+<img
+  src={composeMeme1}
+  style={{ width: "100%", padding: "0 20px" }}
+/>
+
+<img
+  src={composeMeme2}
+  style={{ width: "100%", padding: "0 20px" }}
+/>
+
+<img
+  src={composeMeme3}
+  style={{ width: "100%", padding: "0 20px" }}
+/>
+
+</Horizontal>
+
+---
+
+# Use cases. Normalizing data
+
+---
+
+<CodeSurferColumns themes={[oceanicNext, github]}>
+
+<Step>
+
+```js file=./src/use-cases.data.js
+
+```
+
+```js file=./src/use-cases.native.1.js title="Native approach"
+
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.data.js
+
+```
+
+```js file=./src/use-cases.ramda.1.js title="Ramda approach"
+
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.data.js
+
+```
+
+```js file=./src/use-cases.ramda.2.js title="Ramda approach"
+
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.data.js
+
+```
+
+```js file=./src/use-cases.ramda.3.js title="Ramda approach"
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+Combination of Ramda and React = love ❤️
+
+---
+
+<CodeSurfer>
+
+```js file=./src/use-cases.native.2.js
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns themes={[oceanicNext, github]}>
+
+<Step>
+
+```js file=./src/use-cases.native.3.js
+
+```
+
+```js
+// Ramda approach
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.native.3.js
+
+```
+
+```js file=./src/use-cases.ramda.4.js
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Ramda anti-patterns
+
+---
+
+<CodeSurfer>
+
+```js file=./src/antipatterns.1.js title="Mixing ramda with imperative style" subtitle="It will be easier and much more expressive to use the native js functions and regexp in this case"
+
+```
+
+```js file=./src/antipatterns.2.js title="But with ramda it could be even simpler"
+
+```
+
+```js file=./src/antipatterns.3.js title="Antother anti-pattern example from the real life 🤯"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns themes={[oceanicNext, github]}>
+
+<Step>
+
+```js file=./src/antipatterns.4.js title="Ramda obssese"
+
+```
+
+```js file=./src/antipatterns.5.js
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+references:
+
+[Thinking in Ramda](https://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/)  
+[Use Ramda with React and Redux](https://tommmyy.github.io/ramda-react-redux-patterns/)  
+[Why are we not afraid to think functionally with Ramda?](https://blog.usejournal.com/why-are-we-not-afraid-to-think-functionally-with-ramda-fb17f733fde8)
 
 ---
 
