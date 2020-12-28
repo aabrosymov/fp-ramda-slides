@@ -1,5 +1,4 @@
 import {
-  Head,
   Split,
   SplitRight,
   Appear,
@@ -10,7 +9,7 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { github, oceanicNext } from "@code-surfer/themes";
+import { github, nightOwl } from "@code-surfer/themes";
 import { yellow } from "mdx-deck/themes";
 
 import funcImage from "./assets/images/func.png";
@@ -21,11 +20,7 @@ import composeMeme1 from "./assets/images/compose-meme-1.jpeg";
 import composeMeme2 from "./assets/images/compose-meme-2.jpg";
 import composeMeme3 from "./assets/images/compose-meme-3.png";
 
-export const theme = oceanicNext;
-
-<Head>
-  <title>Why FP? 🤔</title>
-</Head>
+export const theme = nightOwl;
 
 ### Why you should try FP and Ramda JS 🙂
 
@@ -41,9 +36,9 @@ export const theme = oceanicNext;
   }}
 />
 
-## Who am I?
+##### Who am I?
 
-### Anton Abrosymov 😎
+#### Anton Abrosymov
 
 I have 3+ years of experience in JavaScript development.  
 Engaged in React, Node JS.  
@@ -59,7 +54,7 @@ Currently work in middle-size project at front-end lead position.
 
 <img src={thinkMemeImage} style={{ width: "400px" }} />
 
-#### ☝️ As for me there are 2 main principles of software development:
+### ☝️ As for me there are 2 main principles of software development:
 
 </div>
 
@@ -78,19 +73,20 @@ Currently work in middle-size project at front-end lead position.
 
 <SplitRight>
 
-The "functional" in "functional programming"
+The _functional_ in _functional programming_
 refers to _mathematical functions_,  
 rather than "what it should do"  
 as in "functional requirements".
 
 <img src={funcImage} />
-Visual representation of a function f(x) = 3 - 0.5x
+
+##### Visual representation of a function f(x) = 3 - 0.5x
 
 </SplitRight>
 
 ---
 
-# Pure functions 🚰
+### Pure functions 🚰
 
 Given the _same input_,  
 will always return the _same output_  
@@ -98,7 +94,7 @@ and produces _no side effect_
 
 ---
 
-<CodeSurferColumns themes={[oceanicNext, github]}>
+<CodeSurferColumns themes={[nightOwl, github]}>
 
 <Step>
 
@@ -140,15 +136,15 @@ and produces _no side effect_
 
 ---
 
-# Immutable data
+### Immutable data
 
 ---
 
-# Side effects
+### Side effects
 
 ---
 
-# Currying
+### Currying
 
 ```js
 f(x, y, z) => f(x)(y)(z)
@@ -156,7 +152,7 @@ f(x, y, z) => f(x)(y)(z)
 
 ---
 
-# What is the Ramda JS?
+### What is the Ramda JS?
 
 <Split>
 
@@ -180,7 +176,7 @@ f(x, y, z) => f(x)(y)(z)
 
 ---
 
-# Functional composition
+### Functional composition
 
 Applying a function to the output of another function
 
@@ -192,7 +188,7 @@ f(g(h(x))) => compose(h, g, f)(x)
 
 ---
 
-# Function composition
+### Functional composition
 
 <Horizontal>
 
@@ -215,11 +211,11 @@ f(g(h(x))) => compose(h, g, f)(x)
 
 ---
 
-# Use cases. Normalizing data
+### Use cases. Data interactions
 
 ---
 
-<CodeSurferColumns themes={[oceanicNext, github]}>
+<CodeSurferColumns themes={[nightOwl, github]}>
 
 <Step>
 
@@ -273,6 +269,52 @@ f(g(h(x))) => compose(h, g, f)(x)
 
 ---
 
+### Use cases. Working with async actions 👀
+
+---
+
+<CodeSurferColumns themes={[nightOwl, github]}>
+
+<Step>
+
+```js file=./src/use-cases.promises.native.1.js
+
+```
+
+```js file=./src/use-cases.promises.native.2.js title="Native approach"
+
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.promises.native.1.js
+
+```
+
+```js file=./src/use-cases.promises.ramda.1.js title="Ramda approach"
+
+```
+
+</Step>
+
+<Step>
+
+```js file=./src/use-cases.promises.native.1.js
+
+```
+
+```js 3: file=./src/use-cases.promises.ramda.2.js title="Ramda approach"
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
 Combination of Ramda and React = love ❤️
 
 ---
@@ -287,7 +329,7 @@ Combination of Ramda and React = love ❤️
 
 ---
 
-<CodeSurferColumns themes={[oceanicNext, github]}>
+<CodeSurferColumns themes={[nightOwl, github]}>
 
 <Step>
 
@@ -317,7 +359,7 @@ Combination of Ramda and React = love ❤️
 
 ---
 
-# Ramda anti-patterns
+### Ramda anti-patterns
 
 ---
 
@@ -339,7 +381,7 @@ Combination of Ramda and React = love ❤️
 
 ---
 
-<CodeSurferColumns themes={[oceanicNext, github]}>
+<CodeSurferColumns themes={[nightOwl, github]}>
 
 <Step>
 
@@ -354,6 +396,26 @@ Combination of Ramda and React = love ❤️
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+### Summary. Ramda's pros and cons:
+
+<Appear>
+
+- Ramda allows you to use the functional programming style and it doesn't bother you by difficult algebra concepts
+
+- It helps you to build complex functional pipelines
+
+- ...
+
+</Appear>
+
+---
+
+- It takes a while before you can use it confidently
+
+- ...
 
 ---
 
