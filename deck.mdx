@@ -144,14 +144,6 @@ and produces _no side effect_
 
 ---
 
-### Currying
-
-```js
-f(x, y, z) => f(x)(y)(z)
-```
-
----
-
 ### What is the Ramda JS?
 
 <Split>
@@ -176,7 +168,7 @@ f(x, y, z) => f(x)(y)(z)
 
 ---
 
-### Functional composition
+### Functional Composition
 
 Applying a function to the output of another function
 
@@ -185,6 +177,28 @@ Applying a function to the output of another function
 f(g(h(x))) => compose(h, g, f)(x)
 
 </Appear>
+
+---
+
+<CodeSurfer>
+
+```js file=./src/functional-composition.1.js title="Functional Composition" subtitle="Native JS approach"
+
+```
+
+```js file=./src/functional-composition.2.js title="Functional Composition" subtitle="Using R.compose"
+
+```
+
+```js file=./src/functional-composition.3.js title="Functional Composition" subtitle="Using R.pipe"
+
+```
+
+```js file=./src/functional-composition.4.js title="Functional Composition" subtitle="Using R.o"
+
+```
+
+</CodeSurfer>
 
 ---
 
@@ -208,6 +222,28 @@ f(g(h(x))) => compose(h, g, f)(x)
 />
 
 </Horizontal>
+
+---
+
+### Currying
+
+```js
+f(x, y, z) => f(x)(y)(z)
+```
+
+---
+
+<CodeSurfer>
+
+```js file=./src/point-free.1.js title="Point-free style" subtitle="It's a way of defining functions without pointing its arguments or any intermediate data."
+
+```
+
+```js file=./src/point-free.2.js title="Point-free style" subtitle="It's a way of defining functions without pointing its arguments or any intermediate data."
+
+```
+
+</CodeSurfer>
 
 ---
 
@@ -419,13 +455,15 @@ Combination of Ramda and React = love ❤️
 
 ---
 
-references:
+References:
 
-[Thinking in Ramda](https://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/)  
-[Use Ramda with React and Redux](https://tommmyy.github.io/ramda-react-redux-patterns/)  
-[Why are we not afraid to think functionally with Ramda?](https://blog.usejournal.com/why-are-we-not-afraid-to-think-functionally-with-ramda-fb17f733fde8)
+1. [Thinking in Ramda](https://randycoulman.com/blog/2016/05/24/thinking-in-ramda-getting-started/)
+2. [Use Ramda with React and Redux](https://tommmyy.github.io/ramda-react-redux-patterns/)
+3. [Why are we not afraid to think functionally with Ramda?](https://blog.usejournal.com/why-are-we-not-afraid-to-think-functionally-with-ramda-fb17f733fde8)
+4. [Functional JS #5: Partial Application, Currying](https://medium.com/dailyjs/functional-js-5-partial-application-currying-da30da4e0cc3)
+5. [Functional JS #6: Function composition](https://medium.com/dailyjs/functional-js-6-function-composition-b7042c2ccffa)
 
 ---
 
-docs:  
+The lecture materials builded with:  
 [codesurfer.pomb.us](https://codesurfer.pomb.us)
